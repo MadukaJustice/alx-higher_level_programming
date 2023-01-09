@@ -1,0 +1,73 @@
+==============
+1-my_list.py
+==============
+
+Defines a class MyList that inherits the list object ``MyList(list)``
+and a public instance ``print_sorted(self)`` that prints the sorted list.
+
+
+
+Verify Import
+>>> MyList = __import__('1-my_list').MyList
+
+
+SUCCESS CASES:
+
+Positive integers
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+Positie and negative integers
+	>>> my_list = MyList()
+        >>> my_list.append(1)
+        >>> my_list.append(-4)
+        >>> my_list.append(2)
+        >>> my_list.append(-3)
+        >>> my_list.append(5)
+        >>> print(my_list)
+        [1, -4, 2, -3, 5]
+        >>> my_list.print_sorted()
+        [-4, -3, 1, 2, 5]
+        >>> print(my_list)
+        [1, -4, 2, -3, 5]
+
+Only one argument
+	>>> lonely_list = MyList()
+	>>> lonely_list.append(12345)
+	>>> print(lonely_list)
+	[12345]
+
+Passed an empty list
+	>>> empty_list = MyList()
+	>>> print(empty_list)
+	[]
+	>>> empty_list.print_sorted()
+	[]
+
+Passed an already defined list
+	>>> a = [4, 2, 6, 8]
+	>>> defined_list = MyList(a)
+        >>> print(defined_list)
+        [4, 2, 6, 8]
+        >>> defined_list.print_sorted()
+        [2, 4, 6, 8]
+
+
+FAILURE CASES:
+
+Undefined list
+	>>> undefined_list.print_sorted()
+	Traceback (most recent call last):
+		File "<stdin>", line 1, in <module>
+	NameError: name 'undefined_list' is not defined
+	>>>
