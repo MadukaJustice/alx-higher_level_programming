@@ -1,0 +1,65 @@
+===================
+7-base_geometry.py
+===================
+
+Defines a class BaseGeometry and two public instances ``area(self)`` that raises
+an exception and ``integer_validator(self, name, value) that validates 'value'.
+
+
+
+Verify Import
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+SUCCESS CASES:
+
+Positive integers should raise no error and return nothing
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+
+
+FAILURE CASES:
+
+Negative integer
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("negative_int", -12)
+	Traceback (most recent call last):
+        	...
+        ValueError: negative_int must be greater than 0
+
+Value is not an integer
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("dance", "not_int")
+	Traceback (most recent call last):
+		...
+	TypeError: dance must be an integer
+
+Calling the area method
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+Value is equal to zero
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("shape", 0)
+	Traceback (most recent call last):
+                ...
+        ValueError: shape must be greater than 0
+
+Only one argument to integer_validator
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name")
+    Traceback (most recent call last):
+    	      ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+No arguments to integer_validator
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    	      ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
