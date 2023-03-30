@@ -1,8 +1,8 @@
 # Python-Network 0
 ## Learning objectives
-### What a URL is
-What HTTP is
-How to read a URL
+### -What a URL is
+*What HTTP is
++How to read a URL
 The scheme for a HTTP URL
 What a domain name is
 What a sub-domain is
