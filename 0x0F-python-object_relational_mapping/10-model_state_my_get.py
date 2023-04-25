@@ -20,7 +20,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter_by(name=key)).first()
+    state = session.query(State).filter_by(name=key).first()
 
     if state:
         print("{:d}".format(state.id))
